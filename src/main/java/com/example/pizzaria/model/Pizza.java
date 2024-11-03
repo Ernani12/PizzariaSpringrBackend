@@ -1,4 +1,4 @@
-package com.example.pastelaria.model;
+package com.example.pizzaria.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

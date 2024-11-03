@@ -1,15 +1,17 @@
-package com.example.pastelaria.model;
+package com.example.pizzaria.model;
 
-import java.util.List;
+
 import jakarta.persistence.*;
 import jakarta.transaction.Transactional;
 
 @Entity
 @Transactional
-@Table(name = "Usuario")
-public class Usuario extends Pessoa {
-   
+@Table(name = "Administrador")
+public class Administrador extends Pessoa {
+    
     private String nome;
+   
+    // getters and setters
 
     public String getNome() {
         return nome;
@@ -20,9 +22,7 @@ public class Usuario extends Pessoa {
     }
 
     @Enumerated(EnumType.STRING)
-    private Role role = Role.ROLE_USER;
+    private Role role;
 
-    @OneToMany(mappedBy = "usuario")
-    private List<Pedido> pedidos;
-    // getters and setters
+
 }

@@ -1,4 +1,4 @@
-package com.example.pastelaria.service;
+package com.example.pizzaria.service;
 
 import java.util.List;
 
@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import com.example.pastelaria.model.Administrador;
-import com.example.pastelaria.model.ResponseModel;
-import com.example.pastelaria.repository.AdministradorRepository;
+import com.example.pizzaria.model.Administrador;
+import com.example.pizzaria.model.ResponseModel;
+import com.example.pizzaria.repository.AdministradorRepository;
  
 
 public class AdministradorService {

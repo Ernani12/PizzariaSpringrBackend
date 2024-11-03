@@ -1,4 +1,4 @@
-package com.example.pastelaria;
+package com.example.pizzaria;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

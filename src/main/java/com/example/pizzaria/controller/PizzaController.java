@@ -1,4 +1,4 @@
-package com.example.pastelaria.controller;
+package com.example.pizzaria.controller;
 
 import java.util.List;
 
@@ -11,8 +11,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import com.example.pastelaria.model.Pizza;
-import com.example.pastelaria.service.PizzaService;
+
+import com.example.pizzaria.model.Pizza;
+import com.example.pizzaria.service.PizzaService;
 
 @RestController
 @CrossOrigin
@@ -23,16 +24,16 @@ public class PizzaController {
 
     @GetMapping("/")
     public String API(){
-        return "Pastelaria";
+        return "Pizzaria";
     }
 
     public PizzaController(PizzaService pastelService) {
         this.S = pastelService;
     }
 
-    @GetMapping("/getpasteis")
-    public List<Pizza> getAllPasteis() {
-        return S.getAllPasteis();
+    @GetMapping("/getpizzas")
+    public List<Pizza> getAllPizzas() {
+        return S.getAllPizzas();
     }
 
     @PostMapping("/cadastrarpastel")

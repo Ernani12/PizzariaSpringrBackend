@@ -1,7 +1,7 @@
-package com.example.pastelaria.repository;
+package com.example.pizzaria.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.example.pastelaria.model.Pessoa;
+import com.example.pizzaria.model.Pessoa;
 
 
 public interface PessoaRepository extends JpaRepository<Pessoa, Long> {

@@ -1,4 +1,4 @@
-package com.example.pastelaria.model;
+package com.example.pizzaria.model;
 
 import java.time.LocalDateTime;
 import java.util.List;
