@@ -1,8 +1,8 @@
-package com.example.pastelaria.repository;
+package com.example.pizzaria.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.example.pastelaria.model.Administrador;
+import com.example.pizzaria.model.Administrador;
 
 public interface AdministradorRepository extends JpaRepository<Administrador, Long> {
 

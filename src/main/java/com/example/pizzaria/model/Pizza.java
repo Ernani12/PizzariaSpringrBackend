@@ -1,4 +1,4 @@
-package com.example.pastelaria.model;
+package com.example.pizzaria.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,8 +11,8 @@ import jakarta.transaction.Transactional;
 @Transactional
 @Data
 @AllArgsConstructor
-@Table(name = "Pastel")
-public class Pastel { 
+@Table(name = "Pizza")
+public class Pizza { 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -25,17 +25,17 @@ public class Pastel {
     private List<Pedido> pedidos;
     // getters and setters
 
-    public Pastel() {
+    public Pizza() {
     }
 
 
-    public Pastel(String nome, String descricao, Double preco) {
+    public Pizza(String nome, String descricao, Double preco) {
         this.nome = nome;
         this.descricao = descricao;
         this.preco = preco;
     }
 
-    public Pastel(String nome, String descricao, Double preco, List<Pedido> pedidos) {
+    public Pizza(String nome, String descricao, Double preco, List<Pedido> pedidos) {
         this.nome = nome;
         this.descricao = descricao;
         this.preco = preco;

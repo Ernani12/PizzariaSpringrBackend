@@ -1,4 +1,4 @@
-package com.example.pastelaria.controller;
+package com.example.pizzaria.controller;
 
 import java.util.List;
 
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.example.pastelaria.model.Pedido;
-import com.example.pastelaria.service.PedidoService;
+import com.example.pizzaria.model.Pedido;
+import com.example.pizzaria.service.PedidoService;
  
 public class PedidoController {
     

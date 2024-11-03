@@ -1,4 +1,4 @@
-package com.example.pastelaria.model;
+package com.example.pizzaria.model;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -29,6 +29,6 @@ public class Pedido {
         joinColumns = @JoinColumn(name = "pedido_id"),
         inverseJoinColumns = @JoinColumn(name = "pastel_id")
     )
-    private List<Pastel> pasteis;
+    private List<Pizza> pasteis;
     // getters and setters
 }

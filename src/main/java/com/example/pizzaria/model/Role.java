@@ -1,4 +1,4 @@
-package com.example.pastelaria.model;
+package com.example.pizzaria.model;
 
 public  enum Role {
     ROLE_USER,

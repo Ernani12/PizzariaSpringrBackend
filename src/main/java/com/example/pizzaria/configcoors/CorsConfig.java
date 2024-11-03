@@ -1,4 +1,4 @@
-package com.example.pastelaria.configcoors;
+package com.example.pizzaria.configcoors;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.lang.NonNull;

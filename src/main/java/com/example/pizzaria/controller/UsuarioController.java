@@ -1,4 +1,4 @@
-package com.example.pastelaria.controller;
+package com.example.pizzaria.controller;
 
 import java.util.List;
   
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import com.example.pastelaria.model.Usuario;
-import com.example.pastelaria.service.UsuarioService;
+import com.example.pizzaria.model.Usuario;
+import com.example.pizzaria.service.UsuarioService;
 
 @RestController
 public class UsuarioController {

@@ -1,4 +1,4 @@
-package com.example.pastelaria.controller;
+package com.example.pizzaria.controller;
 
 import java.util.List;
 
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.pastelaria.model.Administrador;
-import com.example.pastelaria.service.AdministradorService;
+import com.example.pizzaria.model.Administrador;
+import com.example.pizzaria.service.AdministradorService;
 
 @RestController
 public class AdministradorController {
