@@ -11,14 +11,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import com.example.pastelaria.model.Pastel;
-import com.example.pastelaria.service.PastelService;
+import com.example.pastelaria.model.Pizza;
+import com.example.pastelaria.service.PizzaService;
 
 @RestController
 @CrossOrigin
-public class PastelController {
+public class PizzaController {
 
-    PastelService S;
+    PizzaService S;
   
 
     @GetMapping("/")
@@ -26,22 +26,22 @@ public class PastelController {
         return "Pastelaria";
     }
 
-    public PastelController(PastelService pastelService) {
+    public PizzaController(PizzaService pastelService) {
         this.S = pastelService;
     }
 
     @GetMapping("/getpasteis")
-    public List<Pastel> getAllPasteis() {
+    public List<Pizza> getAllPasteis() {
         return S.getAllPasteis();
     }
 
     @PostMapping("/cadastrarpastel")
-    public ResponseEntity<?> cadastrar(@RequestBody Pastel p) {
+    public ResponseEntity<?> cadastrar(@RequestBody Pizza p) {
         return S.cadastrar(p);
     }
      
     @PutMapping("/alterarpastel")
-    public ResponseEntity<?> alterar(@RequestBody Pastel p) {
+    public ResponseEntity<?> alterar(@RequestBody Pizza p) {
         return S.Alterar(p);
     }
 

@@ -21,22 +21,22 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import com.example.pastelaria.model.Pastel;
-import com.example.pastelaria.repository.PastelRepository;
-import com.example.pastelaria.service.PastelService;
+import com.example.pastelaria.model.Pizza;
+import com.example.pastelaria.repository.PizzaRepository;
+import com.example.pastelaria.service.PizzaService;
 
 @SpringBootTest
 class PastelariaApplicationTests {
 
 
 	@Mock
-    private PastelRepository pastelRepository;
+    private PizzaRepository pastelRepository;
 
     @InjectMocks
-    private PastelService pastelService;
+    private PizzaService pastelService;
 
-	private Pastel pastel1;
-    private Pastel pastel2;
+	private Pizza pastel1;
+    private Pizza pastel2;
     
 
     @BeforeEach
@@ -44,13 +44,13 @@ class PastelariaApplicationTests {
         MockitoAnnotations.openMocks(this);
 
         // Criar dados mockados
-        pastel1 = new Pastel();
+        pastel1 = new Pizza();
         pastel1.setId(1L);
         pastel1.setNome("Pastel de Carne");
         pastel1.setDescricao("Pastel com recheio de carne moída.");
         pastel1.setPreco(5.00);
 
-        pastel2 = new Pastel();
+        pastel2 = new Pizza();
         pastel2.setId(2L);
         pastel2.setNome("Pastel de Queijo");
         pastel2.setDescricao("Pastel com recheio de queijo.");
@@ -60,11 +60,11 @@ class PastelariaApplicationTests {
     @Test
     public void testGetAllPasteis() {
         // Etapa 1: Configurar o comportamento do mock
-        List<Pastel> pasteisMock = Arrays.asList(pastel1, pastel2);
+        List<Pizza> pasteisMock = Arrays.asList(pastel1, pastel2);
         when(pastelRepository.findAll()).thenReturn(pasteisMock);
 
         // Etapa 2: Chamar o método a ser testado
-        List<Pastel> pasteis = pastelService.getAllPasteis();
+        List<Pizza> pasteis = pastelService.getAllPasteis();
 
         // Etapa 3: Verificar o resultado
         assertNotNull(pasteis);
@@ -95,8 +95,8 @@ class PastelariaApplicationTests {
         // Se for um HttpStatus.OK, verificar o corpo da resposta
         if (responseEntity.getStatusCode() == HttpStatus.OK) {
             Object responseBody = responseEntity.getBody();
-            assertTrue(responseBody instanceof Pastel);
-            Pastel pastel = (Pastel) responseBody;
+            assertTrue(responseBody instanceof Pizza);
+            Pizza pastel = (Pizza) responseBody;
             assertEquals("Pastel de Carne", pastel.getNome());
         }
     }
@@ -107,7 +107,7 @@ class PastelariaApplicationTests {
      when(pastelRepository.save(pastel1)).thenReturn(pastel1);
 
      // Etapa 2: Chamar o método a ser testado
-     ResponseEntity<Pastel> responseEntity = pastelService.cadastrar(pastel1);
+     ResponseEntity<Pizza> responseEntity = pastelService.cadastrar(pastel1);
 
      // Etapa 3: Verificar o resultado
      assertNotNull(responseEntity);
@@ -117,7 +117,7 @@ class PastelariaApplicationTests {
      verify(pastelRepository, times(1)).save(pastel1);
 
      // Verificar se o objeto salvo é o correto
-     Pastel savedPastel = responseEntity.getBody();
+     Pizza savedPastel = responseEntity.getBody();
      assertNotNull(savedPastel);
      assertEquals("Pastel de Carne", savedPastel.getNome());
  

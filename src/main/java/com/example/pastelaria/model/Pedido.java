@@ -29,6 +29,6 @@ public class Pedido {
         joinColumns = @JoinColumn(name = "pedido_id"),
         inverseJoinColumns = @JoinColumn(name = "pastel_id")
     )
-    private List<Pastel> pasteis;
+    private List<Pizza> pasteis;
     // getters and setters
 }

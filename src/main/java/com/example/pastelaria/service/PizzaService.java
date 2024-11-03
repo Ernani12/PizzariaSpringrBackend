@@ -5,55 +5,56 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import com.example.pastelaria.model.ResponseModel;
-import com.example.pastelaria.model.Pastel;
-import com.example.pastelaria.repository.PastelRepository;
+import com.example.pastelaria.model.Pizza;
+import com.example.pastelaria.repository.PizzaRepository;
 import jakarta.annotation.PostConstruct;
 import java.util.List;
 import java.util.Optional;
 
 @Service
-public class PastelService {
+public class PizzaService {
    
 
     @Autowired
-    private PastelRepository P;
+    private PizzaRepository P;
     private ResponseModel RM;
      
 
     @PostConstruct
     public void init() {
-        List<Pastel> pasteis = List.of(
-            new Pastel("Pastel de Carne", "Pastel recheado com carne moída temperada", 5.00),
-            new Pastel("Pastel de Queijo", "Pastel recheado com queijo mussarela derretido", 4.50),
-            new Pastel("Pastel de Palmito", "Pastel Palmito", 5.50),
-            new Pastel("Pastel de Queijo/presunto", "Pastel recheado com queijo, presunto", 6.00),
-            new Pastel("Pastel de Vegetariano", "vegetariano", 6.50),
-            new Pastel("Pastel de Tomate", "Pastel recheado tomate", 5.75),
-            new Pastel("Pastel de Milho", "Pastel milhocatupiry", 7.00),
-            new Pastel("Pastel de Brocolis", "Pastel recheado brocolis", 4.75),
-            new Pastel("Pastel de Doce de Leite", "Pastel recheado com doce de leite", 4.50)
+        List<Pizza> pizzas = List.of(
+            new Pizza("Pizza de Calabresa", "Pizza com calabresa e cebola", 25.00),
+            new Pizza("Pizza de Mussarela", "Pizza de mussarela com molho de tomate", 20.00),
+            new Pizza("Pizza de Frango com Catupiry", "Pizza com frango desfiado e catupiry", 28.00),
+            new Pizza("Pizza Portuguesa", "Pizza com presunto, ovos, cebola e azeitona", 30.00),
+            new Pizza("Pizza Vegetariana", "Pizza com vegetais frescos", 26.00),
+            new Pizza("Pizza de Marguerita", "Pizza com tomate, mussarela e manjericão", 27.00),
+            new Pizza("Pizza de Milho", "Pizza com milho e catupiry", 24.00),
+            new Pizza("Pizza de Brócolis", "Pizza com brócolis e molho especial", 23.00),
+            new Pizza("Pizza de Doce de Leite", "Pizza com doce de leite e cobertura de açúcar", 22.00)
         );
 
-        P.saveAll(pasteis);
+        P.saveAll(pizzas);
     }
+
 
    
 
     //list all products
-    public List<Pastel> getAllPasteis(){
+    public List<Pizza> getAllPasteis(){
         return P.findAll();
     }
 
     public ResponseEntity<?> getPastelById(Long id) {
-        Optional<Pastel> optionalPastel = P.findById(id);
+        Optional<Pizza> optionalPastel = P.findById(id);
         if (optionalPastel.isPresent()) {
-            return new ResponseEntity<Pastel>(optionalPastel.get(), HttpStatus.OK);
+            return new ResponseEntity<Pizza>(optionalPastel.get(), HttpStatus.OK);
         } else {
             return new ResponseEntity<ResponseModel>(HttpStatus.NOT_FOUND);
         }
     }
   
-    public ResponseEntity<Pastel> cadastrar(Pastel pastel) {
+    public ResponseEntity<Pizza> cadastrar(Pizza pastel) {
         if (pastel == null) {
             RM.setMessage("O pastel recebido é nulo");
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
@@ -69,12 +70,12 @@ public class PastelService {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
 
-        Pastel savedPastel = P.save(pastel);
+        Pizza savedPastel = P.save(pastel);
         return new ResponseEntity<>(savedPastel, HttpStatus.CREATED);
     }
 
 
-    public ResponseEntity<?> Alterar(Pastel p){
+    public ResponseEntity<?> Alterar(Pizza p){
 
         if(p.getNome().equals("")){
             RM.setMessage("Nome é obrigatorio");
@@ -85,7 +86,7 @@ public class PastelService {
             return new ResponseEntity<ResponseModel>(RM, HttpStatus.BAD_REQUEST);
         }else{
             RM.setMessage("FOI CADASTRADO");
-            return new  ResponseEntity<Pastel>(P.save(p),HttpStatus.OK);      
+            return new  ResponseEntity<Pizza>(P.save(p),HttpStatus.OK);      
         }
         
     }
